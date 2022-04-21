@@ -1,0 +1,31 @@
+---
+import TeamMember from '../components/TeamMember.astro'
+---
+<section id="our-team" class="text-center">
+  <h3 class="font-semibold">Our team</h3>
+
+  <div id="controls">
+    <button class="previous">◄</button>
+    <button class="next">►</button>
+  </div>
+
+  <div class="my-slider w-full">
+    <TeamMember name="NGUYEN HAI DANG" role="Cofouder / CEO"></TeamMember>
+    <TeamMember name="NGO THANH QUYEN" role="Cofouder / CEO"></TeamMember>
+    <TeamMember name="NGO THANH QUYEN" role="Cofouder / CEO"></TeamMember>
+    <TeamMember name="NGO THANH QUYEN" role="Cofouder / CEO"></TeamMember>
+    <TeamMember name="NGO THANH QUYEN" role="Cofouder / CEO"></TeamMember>
+  </div>
+
+</section>
+
+<script>
+  const slider = tns({
+    container: '.my-slider',
+    items: 3,
+    slideBy: 'page',
+    controlsContainer: "#controls",
+    prevButton: ".previous",
+    nextButton: ".next",
+  });
+</script>

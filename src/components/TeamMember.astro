@@ -1,0 +1,13 @@
+---
+export interface Props {
+  name?: string,
+  role?: string,
+}
+const { name, role } = Astro.props;
+---
+
+<div>
+  <div class="border-2 rounded-full w-28 h-28 border-black"></div>
+  <h4 class="text-xs font-semibold mt-4">{name}</h4>
+  <span class="text-xs">{role}</span>
+</div>

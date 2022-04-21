@@ -1,0 +1,26 @@
+---
+import Logo from '../components/Logo.astro';
+---
+<header class="flex justify-between items-center py-5 px-16 border-b-2 border-b-gray-700 mb-3">
+  <div class="flex flex-shrink-0">
+    <Logo width={100} />
+  </div>
+
+  <div class="flex flex-grow w-auto justify-center">
+    <ul class="flex gap-5">
+      <li class="cursor-pointer hover:text-gray-400 hover:scale-105"><strong><a href="/#about-us">About Us</a></strong></li>
+      <li class="cursor-pointer hover:text-gray-400 hover:scale-105">Our team</li>
+      <li class="cursor-pointer hover:text-gray-400 hover:scale-105">Our Strengths</li>
+      <li class="cursor-pointer hover:text-gray-400 hover:scale-105">Partners</li>
+      <li class="cursor-pointer hover:text-gray-400 hover:scale-105">Contact</li>
+    </ul>
+  </div>
+
+  <div class="flex relative flex-shrink-0">
+    <img src="/images/en.png" width="30" alt="Lang EN" class=" cursor-pointer">
+    <img src="/images/vi.png" width="30" alt="Lang VI" class="absolute left-3.5 -z-10 cursor-pointer">
+  </div>
+</header>
+
+<script>
+</script>
