@@ -19,3 +19,7 @@ body {
 	max-width: 1440px;
 	margin: 0 auto !important;
 }
+
+.section-caption {
+	@apply text-lg font-bold mb-8;
+}

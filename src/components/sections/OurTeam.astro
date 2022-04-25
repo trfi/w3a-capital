@@ -1,0 +1,83 @@
+---
+import TeamMember from '../../components/TeamMember.astro';
+
+const members = [
+  { 
+    name: "NGUYEN HAI DANG", 
+    roles: ["Cofounder / CEO", "Former business director\nof VUTATECH JSC", "Start-up Advisor", "Angel Investor"] 
+  },
+  { 
+    name: "NGO THANH QUYEN",
+    roles: ["Cofounder / CFO", "Start-up Advisor", "Angel Investor"]
+  },
+  { 
+    name: "TRAN MINH HANH",
+    roles: ["Cofounder / PM", "Start-up Advisor"]
+  },
+  {
+    name: "BUI QUANG TRUONG",
+    roles: ["Tech Lead"]
+  },
+  {
+    name: "TRAN NAM HOANG",
+    roles: ["Business Manager"]
+  },
+  {
+    name: "TRAN NGOC HUYEN",
+    roles: ["KOL"]
+  }
+];
+---
+<style>
+  .previous {
+    position: absolute;
+    top: 10rem;
+    left: 0;
+    z-index: 10;
+  }
+  .next {
+    position: absolute;
+    top: 10rem;
+    right: 0;
+    z-index: 10;
+  }
+</style>
+
+<section id="our-team" class="text-center mb-14 relative">
+  <h3 class="section-caption">Our team</h3>
+
+  <div id="team-controls">
+    <button class="previous"><img src="images/left.svg" alt="Left"></button>
+    <button class="next"><img src="images/right.svg" alt="Right"></button>
+  </div>
+
+  <div class="team-slide">
+    { members.map(mem => <TeamMember data={mem}></TeamMember>) }
+  </div>
+
+</section>
+
+<script>
+  const slider = tns({
+    container: '.team-slide',
+    items: 1,
+    slideBy: 'page',
+    controlsContainer: "#team-controls",
+    prevButton: "#team-controls>.previous",
+    nextButton: "#team-controls>.next",
+    mouseDrag: true,
+    responsive: {
+      640: {
+        edgePadding: 20,
+        gutter: 20,
+        items: 2
+      },
+      700: {
+        gutter: 30
+      },
+      900: {
+        items: 3
+      }
+    }
+  });
+</script>

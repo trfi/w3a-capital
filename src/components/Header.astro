@@ -1,26 +1,43 @@
 ---
-import Logo from '../components/Logo.astro';
+import Logo from './Logo.astro';
 ---
-<header class="flex justify-between items-center py-5 px-16 border-b-2 border-b-gray-700 mb-3">
-  <div class="flex flex-shrink-0">
+<style>
+  .active {
+    font-weight: 700;
+  }
+</style>
+
+<header class="flex justify-between items-center py-5 px-0 lg:px-16 border-b-2 border-b-gray-700 mb-2">
+  <div class="flex flex-shrink-0 w-[70px] lg:w-[100px] ml-3">
     <Logo width={100} />
   </div>
 
-  <div class="flex flex-grow w-auto justify-center">
-    <ul class="flex gap-5">
-      <li class="cursor-pointer hover:text-gray-400 hover:scale-105"><strong><a href="/#about-us">About Us</a></strong></li>
-      <li class="cursor-pointer hover:text-gray-400 hover:scale-105">Our team</li>
-      <li class="cursor-pointer hover:text-gray-400 hover:scale-105">Our Strengths</li>
-      <li class="cursor-pointer hover:text-gray-400 hover:scale-105">Partners</li>
-      <li class="cursor-pointer hover:text-gray-400 hover:scale-105">Contact</li>
+  <div class="lg:flex hidden flex-grow w-auto justify-center">
+    <ul class="flex gap-5" id="menu">
+      <li class="cursor-pointer hover:text-gray-400 hover:scale-105"><a href="/#about-us" onclick="change(this)">About Us</a></li>
+      <li class="cursor-pointer hover:text-gray-400 hover:scale-105"><a href="/#our-team" onclick="change(this)">Our team</a></li>
+      <li class="cursor-pointer hover:text-gray-400 hover:scale-105"><a href="/#our-strengths" onclick="change(this)">Our Strengths</a></li>
+      <li class="cursor-pointer hover:text-gray-400 hover:scale-105"><a href="/#partners" onclick="change(this)">Partners</a></li>
+      <li class="cursor-pointer hover:text-gray-400 hover:scale-105"><a href="/#footer" onclick="change(this)">Contact</a></li>
     </ul>
   </div>
 
-  <div class="flex relative flex-shrink-0">
-    <img src="/images/en.png" width="30" alt="Lang EN" class=" cursor-pointer">
-    <img src="/images/vi.png" width="30" alt="Lang VI" class="absolute left-3.5 -z-10 cursor-pointer">
-  </div>
+  <a href="/vi">
+    <div class="flex relative flex-shrink-0 mr-6">
+        <img src="/images/en.png" width="30" alt="Lang EN">
+      <img src="/images/vi.png" width="30" alt="Lang VI" class="absolute left-3.5 -z-10">
+    </div>
+  </a>
 </header>
 
-<script>
+<script type="text/javascript">
+  function change(elm) {
+    const list = document.querySelectorAll('#menu>li>a');
+
+    for (let i = 0; i < list.length; ++i) {
+      list[i].classList.remove('active');
+    }
+
+    elm.classList.add('active');
+  }
 </script>

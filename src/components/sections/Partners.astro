@@ -1,0 +1,60 @@
+---
+import Partner from '../../components/Partner.astro'
+---
+<style>
+  .previous {
+    position: absolute;
+    top: 6.5rem;
+    left: 0;
+    z-index: 10;
+  }
+  .next {
+    position: absolute;
+    top: 6.5rem;
+    right: 0;
+    z-index: 10;
+  }
+</style>
+<section id="partners" class="text-center relative">
+  <h3 class="section-caption">Partners</h3>
+
+  <div id="partner-controls">
+    <button class="previous"><img src="images/left.svg" alt="Left"></button>
+    <button class="next"><img src="images/right.svg" alt="Right"></button>
+  </div>
+
+  <div class="partner-slide px-0 lg:px-36">
+    <Partner name="Binance"></Partner>
+    <Partner name="Binance"></Partner>
+    <Partner name="Binance"></Partner>
+    <Partner name="Binance"></Partner>
+    <Partner name="Binance"></Partner>
+    <Partner name="Binance"></Partner>
+  </div>
+
+</section>
+
+<script>
+  const slider = tns({
+    container: '.partner-slide',
+    items: 1,
+    slideBy: 'page',
+    controlsContainer: "#partner-controls",
+    prevButton: "#partner-controls>.previous",
+    nextButton: "#partner-controls>.next",
+    mouseDrag: true,
+    responsive: {
+      640: {
+        edgePadding: 20,
+        gutter: 20,
+        items: 2
+      },
+      700: {
+        gutter: 30
+      },
+      900: {
+        items: 4
+      }
+    }
+  });
+</script>
