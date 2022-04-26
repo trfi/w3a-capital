@@ -16,17 +16,15 @@ import Logo from './Logo.astro';
     <ul class="flex gap-5" id="menu">
       <li class="cursor-pointer hover:text-gray-400 hover:scale-105"><a href="#about-us" onclick="change(this)">Giới thiệu</a></li>
       <li class="cursor-pointer hover:text-gray-400 hover:scale-105"><a href="#our-team" onclick="change(this)">Đội ngũ</a></li>
-      <li class="cursor-pointer hover:text-gray-400 hover:scale-105"><a href="#our-strengths" onclick="change(this)">Sức mạnh</a></li>
+      <li class="cursor-pointer hover:text-gray-400 hover:scale-105"><a href="#our-strengths" onclick="change(this)">Thế mạnh</a></li>
       <li class="cursor-pointer hover:text-gray-400 hover:scale-105"><a href="#partners" onclick="change(this)">Đối tác</a></li>
       <li class="cursor-pointer hover:text-gray-400 hover:scale-105"><a href="#footer" onclick="change(this)">Liên hệ</a></li>
     </ul>
   </div>
 
-  <a href="/">
-    <div class="flex relative flex-shrink-0 mr-6">
-        <img src="/images/vi.png" width="30" alt="Lang VI">
-      <img src="/images/en.png" width="30" alt="Lang EN" class="absolute left-3.5 -z-10">
-    </div>
+  <a href="/" class="flex relative flex-shrink-0 mr-6">
+    <img src="/images/vi.png" width="30" alt="Lang VI" class="z-10">
+    <img src="/images/en.png" width="30" alt="Lang EN" class="absolute left-3.5">
   </a>
 </header>
 
