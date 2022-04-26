@@ -6,7 +6,11 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "build:tar": "tar -cvf ./deploy.tar ./captain-definition ./dist/*",
+    "deploy": "caprover deploy --default",
+    "deploy:option": "caprover deploy -a landing-page -t ./deploy.tar",
+    "build:deploy": "npm-run-all build build:tar deploy"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^0.2.0",
