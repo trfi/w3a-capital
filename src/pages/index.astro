@@ -16,7 +16,18 @@ let title = 'Web3 Angel Capital';
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
 	<title>{title}</title>
-
+	<script type="text/javascript">
+		var country = window.localStorage.getItem('country');
+		if (country == null) {
+			fetch('https://ipinfo.io/?token=26c873e7752096').then(res => res.json()).then(json => {
+				if (json.country == 'VN') window.location = '/vi/';
+				window.localStorage.setItem('country', json.country);
+			});
+		}
+		else if (country == 'VN') {
+			window.location = '/vi/';
+		}
+	</script>
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
